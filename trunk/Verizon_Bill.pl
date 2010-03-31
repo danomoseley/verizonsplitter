@@ -17,7 +17,7 @@ use strict;
 use CAM::PDF;
 use CAM::PDF::PageText;
 
-my $PROGNAME = "file_upload.pl";
+my $PROGNAME = "Verizon_Bill.pl";
 
 my $cgi = new CGI();
 print "Content-type: text/html\n\n";
@@ -173,14 +173,14 @@ for($count = 1;$count<12;$count++){
 
 		if(scalar(@charges)==0){
 			if($page_content =~ /Monthly Access Charges(.+?)(\d+\.\d+)/s){
-				print $2;
+				#print $2;
 				$discounted_plan = $2;
 				$family_plan_cost = $2;
 			}
 			if($page_content =~ /Monthly Access Charges(.+?)(\d+\.\d+)(.+?)(\d+\.\d+)/s){
 				$discounted_plan -= $3;
 				$discount = $3/$family_plan_cost;
-				print $discount;
+				#print $discount;
 			}
 		}
 
