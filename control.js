@@ -1,0 +1,9 @@
+$(document).ready(function(){
+	$(".person").click(function(e){
+		if($(".details",this).is(':visible')){
+			$(".details",this).slideUp(200);
+		}else{
+			$(".details",this).slideDown(200);	
+		}
+	});
+});
