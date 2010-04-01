@@ -188,6 +188,7 @@ if(!$COMMAND_LINE){
 		print "Overage Charges : ".currency_format('USD', $overage[$count], FMT_SYMBOL)."<br/>";
 		print "Surcharges : ".currency_format('USD', $surcharges[$count], FMT_SYMBOL)."<br/>";
 		print "Taxes : ".currency_format('USD', $taxes[$count], FMT_SYMBOL)."<br/>";		
+		print "Shared Portion : ".currency_format('USD', $discounted_plan/3, FMT_SYMBOL)."<br/>";
 		print "</div>";
 		print "</div>";
 	}
