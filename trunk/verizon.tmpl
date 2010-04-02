@@ -1,0 +1,25 @@
+  <html>
+  <head><title>Test Template</title>
+  <body>
+Plan Cost : <TMPL_VAR NAME=plan_cost><br/>
+Discount : <TMPL_VAR NAME=discount><br/>
+Additional Lines : <TMPL_VAR NAME=additional_lines> at $9.99<br/>
+Total Shared Cost :  <TMPL_VAR NAME=total_shared_cost><br/>
+<br/>
+   <TMPL_LOOP NAME=family_info>	
+	<div class="person">
+      		<TMPL_VAR NAME=NAME> (<TMPL_VAR NAME=number>) : <TMPL_VAR NAME=total>
+	<div class="details">
+		Total Access Charges : <TMPL_VAR NAME=total_access_charges> <br/>
+		Individual Access Charges : <TMPL_VAR NAME=access_charges> <br/>
+		Overage Charges : <TMPL_VAR NAME=usage_charges> <br/>	
+		Surcharges : <TMPL_VAR NAME=surcharges> <br/>      		
+		Taxes : <TMPL_VAR NAME=taxes> <br/>  		
+      		Surcharge Percentage : <TMPL_VAR NAME=surcharge_percentage> <br/>
+		Tax Percentage : <TMPL_VAR NAME=tax_percentage> <br/>		
+	</div>
+	</div>
+   </TMPL_LOOP>
+   Total : <TMPL_VAR NAME=total>
+  </body>
+  </html>
