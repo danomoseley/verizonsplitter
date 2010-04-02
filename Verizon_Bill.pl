@@ -49,7 +49,7 @@ if($filename = shift){
 
 	$pdf = CAM::PDF->new("/tmp/".$basename);
 }
-print "<head><link href=../css/style.css rel=stylesheet media=screen><script src=../js/jquery-1.4.2.min.js type=text/javascript></script><script src=../js/control.js type=text/javascript></script></head>";
+
 my $discount;
 my $family_plan_cost;
 my $discounted_plan;
@@ -62,11 +62,6 @@ my $voice_usage_charge;
 my $data_usage_charge;
 my $surcharge;
 my $total_taxes;
-#my @charges;
-#my @names;
-#my @access;
-#my @overage;
-#my @surcharges;
 my $total = 0;
 my @data = ();
 my $person_count = 0;
@@ -150,7 +145,6 @@ for($count = 1;$count<12;$count++){
 
 }
 
-
 for($count=0;$count<$person_count;$count++){
 	$data[$count]{total} = $data[$count]{total}+$discounted_plan/3;
 	$total += $data[$count]{total};
@@ -176,8 +170,7 @@ for($count=0;$count<$person_count;$count++){
 	$data[$count]{surcharge_percentage} = sprintf("%.1f",$data[$count]{surcharge_percentage}*100)."%";
 }
 
-if(!$COMMAND_LINE){
-	
+if(!$COMMAND_LINE){	
 	my $template = HTML::Template->new(filename => 'verizon.tmpl');
 	$template->param(family_info => \@data);
 	$template->param(plan_cost => currency_format('USD', $family_plan_cost, FMT_SYMBOL));
