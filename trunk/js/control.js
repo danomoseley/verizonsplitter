@@ -1,9 +1,9 @@
 $(document).ready(function(){
 	$(".person").click(function(e){
-		if($(".details",this).is(':visible')){
-			$(".details",this).slideUp(200);
+		if($(".details",$(this).parent()).is(':visible')){
+			$(".details",$(this).parent()).slideUp(200);
 		}else{
-			$(".details",this).slideDown(200);	
+			$(".details",$(this).parent()).slideDown(200);	
 		}
 	});
 });

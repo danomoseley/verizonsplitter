@@ -6,3 +6,7 @@
 body{
 	padding:100px;
 }
+
+.person{
+	cursor:pointer;
+}
