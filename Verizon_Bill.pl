@@ -68,7 +68,7 @@ my $person_count = 0;
 
 
 my $count;
-for($count = 1;$count<12;$count++){
+for($count = 1;$count<$pdf->numPages();$count++){
 	my $content_tree = $pdf->getPageContentTree($count);
 	my $page_content = CAM::PDF::PageText->render($content_tree);
 	if($page_content =~ /Quick Bill Summary/){
